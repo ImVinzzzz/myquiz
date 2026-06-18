@@ -5,20 +5,154 @@
     "gridCols": 13
   },
   "blackCells": [
-    [0,11],
-    [1,5],[1,14],
-    [2,5],[2,8],[2,10],
-    [3,2],[3,5],[3,9],
-    [4,1],[4,7],[4,11],
-    [5,4],[5,8],
-    [6,0],[6,7],
-    [7,1],[7,4],[7,7],[7,10],
-    [8,6],[8,9],[8,12],
-    [9,3],[9,5],[9,10],
-    [10,5],[10,7],
-    [11,4],[11,7],
-    [12,1],[12,3],[12,5],
-    [13,1],[13,3],[13,9],[13,12]
+    [
+      0,
+      11
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      14
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      2,
+      10
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      11
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      10
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      5
+    ],
+    [
+      10,
+      7
+    ],
+    [
+      11,
+      4
+    ],
+    [
+      11,
+      7
+    ],
+    [
+      12,
+      1
+    ],
+    [
+      12,
+      3
+    ],
+    [
+      12,
+      5
+    ],
+    [
+      13,
+      1
+    ],
+    [
+      13,
+      3
+    ],
+    [
+      13,
+      9
+    ],
+    [
+      13,
+      12
+    ]
   ],
   "words": [
     {
@@ -42,7 +176,7 @@
       "answer": "ROMBO",
       "clue": "Pesce che è anche un parallelogrammo con i lati della stessa lunghezza",
       "hint": true,
-      "image": "rombo.jpg"
+      "image": "s1_12o.jpg"
     },
     {
       "id": 3,
@@ -54,7 +188,7 @@
       "answer": "DELFINO",
       "clue": "Il santo del 24 dicembre... che è anche un mammifero acquatico",
       "hint": true,
-      "image": "delfino.jpg"
+      "image": "s1_13o.jpg"
     },
     {
       "id": 4,
@@ -66,7 +200,7 @@
       "answer": "SAURO",
       "clue": "Pesce, rettile e manto equino",
       "hint": true,
-      "image": "sauro.jpg"
+      "image": "s1_15o.jpg"
     },
     {
       "id": 5,
@@ -78,7 +212,7 @@
       "answer": "ELI",
       "clue": "Sommo sacerdote di Silo, il penultimo dei giudici israeliti, predecessore di Samuele",
       "hint": true,
-      "image": "eli.jpg"
+      "image": "s1_16o.jpg"
     },
     {
       "id": 6,
@@ -88,7 +222,7 @@
       "col": 10,
       "length": 2,
       "answer": "NM",
-      "clue": "Nome senza pari",
+      "clue": "Miliardesimo di metro",
       "hint": false
     },
     {
@@ -99,7 +233,7 @@
       "col": 0,
       "length": 2,
       "answer": "OR",
-      "clue": "Un terzo di orbita",
+      "clue": "Operatore logico (booleano) di disgiunzione logica tra due proposizioni",
       "hint": false
     },
     {
@@ -110,7 +244,7 @@
       "col": 4,
       "length": 4,
       "answer": "ELLG",
-      "clue": "Bellagio senza baio",
+      "clue": "East Lancashire Learning Group",
       "hint": false
     },
     {
@@ -123,7 +257,7 @@
       "answer": "ZOO",
       "clue": "Esposizione al pubblico di animali esotici",
       "hint": true,
-      "image": "zoo.jpg"
+      "image": "s1_20o.jpg"
     },
     {
       "id": 10,
@@ -135,7 +269,7 @@
       "answer": "CLARA",
       "clue": "Compagna di avventure della piccola Heidi",
       "hint": true,
-      "image": "clara.jpg"
+      "image": "s1_21o.jpg"
     },
     {
       "id": 11,
@@ -167,9 +301,9 @@
       "col": 0,
       "length": 4,
       "answer": "ALEF",
-      "clue": "Prima lettera dell'alfabeto... ebraico",
+      "clue": "Prima lettera dell'alfabeto ebraico",
       "hint": true,
-      "image": "alef.jpg"
+      "image": "ds1_24o.jpg"
     },
     {
       "id": 14,
@@ -181,7 +315,7 @@
       "answer": "PINO",
       "clue": "Conifera che può essere mugo, marittimo, silvestre...",
       "hint": true,
-      "image": "pino.jpg"
+      "image": "s1_26o.jpg"
     },
     {
       "id": 15,
@@ -213,9 +347,9 @@
       "col": 8,
       "length": 4,
       "answer": "BONN",
-      "clue": "Città tedesca sul Reno, natali di Beethoven",
+      "clue": "Città tedesca sul Reno che ha dato i natali a Beethoven",
       "hint": true,
-      "image": "bonn.jpg"
+      "image": "s1_31o.jpg"
     },
     {
       "id": 18,
@@ -225,7 +359,7 @@
       "col": 2,
       "length": 3,
       "answer": "ECE",
-      "clue": "Disfece... alla fine",
+      "clue": "Nome femminile di origine turca che significa 'regina', 'principessa'",
       "hint": false
     },
     {
@@ -238,7 +372,7 @@
       "answer": "RENZO",
       "clue": "Nome di un protagonista manzoniano",
       "hint": true,
-      "image": "renzo.jpg"
+      "image": "s1_34o.jpg"
     },
     {
       "id": 20,
@@ -261,7 +395,7 @@
       "answer": "BIA",
       "clue": "La maghetta protagonista di un anime di Makiko Narita",
       "hint": true,
-      "image": "bia.jpg"
+      "image": "s1_37o.jpg"
     },
     {
       "id": 22,
@@ -284,7 +418,7 @@
       "answer": "ATP",
       "clue": "Adenosina trifosfato",
       "hint": true,
-      "image": "atp.jpg"
+      "image": "s1_40o.jpg"
     },
     {
       "id": 24,
@@ -305,7 +439,7 @@
       "col": 8,
       "length": 5,
       "answer": "TRONI",
-      "clue": "Sedie di regnanti",
+      "clue": "Sedute... di re e regine",
       "hint": false
     },
     {
@@ -329,7 +463,7 @@
       "answer": "IRIS",
       "clue": "Fiore comunemente noto anche con il nome di giaggiolo / Dea greca dell'arcobaleno",
       "hint": true,
-      "image": "iris.jpg"
+      "image": "s1_.jpg"
     },
     {
       "id": 28,
@@ -341,7 +475,7 @@
       "answer": "NEON",
       "clue": "Gas nobile... utilizzato nelle insegne",
       "hint": true,
-      "image": "neon.jpg"
+      "image": "s1_51o.jpg"
     },
     {
       "id": 29,
@@ -353,7 +487,7 @@
       "answer": "LUCIDO",
       "clue": "Il santo di Aquara, ricordato il 5 dicembre",
       "hint": true,
-      "image": "lucido.jpg"
+      "image": "s1_52o.jpg"
     },
     {
       "id": 30,
@@ -365,7 +499,7 @@
       "answer": "EDVIGE",
       "clue": "La Santa Duchessa di Slesia e di Polonia ricordata il 16 ottobre",
       "hint": true,
-      "image": "edvige.jpg"
+      "image": "s1_54o.jpg"
     },
     {
       "id": 31,
@@ -375,7 +509,7 @@
       "col": 0,
       "length": 6,
       "answer": "ORSOLA",
-      "clue": "Fanciulla di rara bellezza, figlia di un re di Britagna. Le sue compagne di martirio furono Marta, Saula, Brittola...",
+      "clue": "Fanciulla di rara bellezza, figlia di un re di Britagna. Tra le sue compagne di martirio: Saturia, Saula, Brittola...",
       "hint": true,
       "image": "orsola.jpg"
     },
@@ -398,7 +532,7 @@
       "col": 2,
       "length": 3,
       "answer": "IMU",
-      "clue": "Ex tassa comunale sugli immobili",
+      "clue": "Fu sostituita dall'ICI",
       "hint": false
     },
     {
@@ -411,7 +545,7 @@
       "answer": "EBRULFO",
       "clue": "Santo eremita vissuto in Normandia nel VI sec., ricordato il 29 dicembre",
       "hint": true,
-      "image": "ebrulfo.jpg"
+      "image": "s1_4v.jpg"
     },
     {
       "id": 35,
@@ -421,7 +555,7 @@
       "col": 4,
       "length": 3,
       "answer": "TOO",
-      "clue": "In coda al tatoo",
+      "clue": "In fondo al tatoo",
       "hint": false
     },
     {
@@ -433,7 +567,8 @@
       "length": 8,
       "answer": "ADELAIDE",
       "clue": "Santa Imperatrice, vedova di Lotario II e poi moglie di Ottone I, commemorata il 16 dicembre",
-      "hint": false
+      "hint": true,
+      "image": "s1_6v.jpg"
     },
     {
       "id": 37,
@@ -445,7 +580,7 @@
       "answer": "BELL",
       "clue": "Ingegnere e inventore di origine scozzese che per primo brevettò il telefono",
       "hint": true,
-      "image": "bell.jpg"
+      "image": "s1_7v.jpg"
     },
     {
       "id": 38,
@@ -457,7 +592,7 @@
       "answer": "ELIGIO",
       "clue": "Santo Vescovo di Francia ricordato il primo dicembre",
       "hint": true,
-      "image": "eligio.jpg"
+      "image": "s1_8v.jpg"
     },
     {
       "id": 39,
@@ -469,7 +604,7 @@
       "answer": "RF",
       "clue": "Riccardo Fogli",
       "hint": true,
-      "image": "rf.jpg"
+      "image": "s1_9v.jpg"
     },
     {
       "id": 40,
@@ -492,7 +627,7 @@
       "answer": "INNOCENZO",
       "clue": "Nome di 13 papi",
       "hint": true,
-      "image": "innocenzo.jpg"
+      "image": "s1_11v.jpg"
     },
     {
       "id": 42,
@@ -504,7 +639,7 @@
       "answer": "OMOBONO",
       "clue": "Santo di Cremona, ricordato il 13 novembre",
       "hint": true,
-      "image": "omobono.jpg"
+      "image": "s1_14v.jpg"
     },
     {
       "id": 43,
@@ -514,9 +649,9 @@
       "col": 4,
       "length": 6,
       "answer": "ERPICE",
-      "clue": "Macchina agricola detta anche frangizolle",
+      "clue": "Macchina agricola, detta anche frangizolle",
       "hint": true,
-      "image": "erpice.jpg"
+      "image": "s1_19v.jpg"
     },
     {
       "id": 44,
@@ -528,7 +663,7 @@
       "answer": "CELESTINOV",
       "clue": "Il papa del «gran rifiuto» dantesco",
       "hint": true,
-      "image": "celestino.jpg"
+      "image": "s1_21v.jpg"
     },
     {
       "id": 45,
@@ -595,7 +730,7 @@
       "answer": "BIBIANA",
       "clue": "Santa martire, celebrata il 2 dicembre",
       "hint": true,
-      "image": "bibiana.jpg"
+      "image": "s1_32v.jpg"
     },
     {
       "id": 51,
@@ -616,7 +751,7 @@
       "col": 1,
       "length": 5,
       "answer": "NONNE",
-      "clue": "Madri di madri",
+      "clue": "Mamme di mamme",
       "hint": false
     },
     {
@@ -651,7 +786,7 @@
       "answer": "RISO",
       "clue": "Cereale molto diffuso in India",
       "hint": true,
-      "image": "riso.jpg"
+      "image": "s1_42v.jpg"
     },
     {
       "id": 56,
@@ -685,7 +820,7 @@
       "answer": "NIDO",
       "clue": "Casa per uccelli",
       "hint": true,
-      "image": "nido.jpg"
+      "image": "s1_47v.jpg"
     },
     {
       "id": 59,
