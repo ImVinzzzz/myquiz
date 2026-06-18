@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import gameData from "./data/schema1.json";
+import gameData from "../data/schema1.json";
 
 // ─── CONSTANTS ──────────────────────────────────────────────────────────────
 const JOKER_INVENTORY = { x2: 2, x3: 2, x4: 1 };
