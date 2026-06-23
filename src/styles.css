@@ -230,7 +230,7 @@ body {
   overflow: hidden;
 }
 .cell-black {
-  background: linear-gradient(135deg, #1D6FD3, #884AB7);
+  background: linear-gradient(135deg, #1D6FD3, #002F6E);
 }
 .cell-white {
   background: #16213e;
