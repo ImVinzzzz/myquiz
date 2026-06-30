@@ -26,7 +26,7 @@ export const quizzes: Quiz[] = [
   slug: "idioti-crossquiz",
   title: "Idioti crossquiz",
   coverImageUrl: "/images/idioti-crossquiz.jpg",
-  genre: "Cruciiverba",
+  genre: "Cruciverba",
   tags: ["cultura generale", "parole", "quiz", "cruciverba"],
   description: "Un gioco da tavolo digitale per 2–6 giocatori (o squadre) basato su un cruciverba a tema variabile e cultura generale.",
   favorite: false,
