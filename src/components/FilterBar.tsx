@@ -11,8 +11,10 @@ interface FilterBarProps {
   selectedGenre: string | null;
   /** Tag attualmente selezionati (selezione multipla, OR tra loro) */
   selectedTags: string[];
+  showOnlyFavorites: boolean;
   onGenreChange: (genre: string | null) => void;
   onTagToggle: (tag: string) => void;
+  onFavoritesChange: (showOnly: boolean) => void;
   onReset: () => void;
 }
 
@@ -36,14 +38,43 @@ export default function FilterBar({
   tags,
   selectedGenre,
   selectedTags,
+  showOnlyFavorites,
   onGenreChange,
   onTagToggle,
+  onFavoritesChange,
   onReset,
 }: FilterBarProps): ReactElement {
-  const hasActiveFilters = selectedGenre !== null || selectedTags.length > 0;
+  const hasActiveFilters = selectedGenre !== null || selectedTags.length > 0 || showOnlyFavorites;
 
   return (
     <div className="flex flex-col gap-5 rounded-xl border border-[#4E2D13] bg-[#1E130B] p-5">
+      {/* Filtro Preferiti */}
+      <div className="flex flex-col gap-2">
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#F97316]">
+          Preferiti
+        </span>
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => onFavoritesChange(false)}
+            className={chipClasses(!showOnlyFavorites)}
+            aria-pressed={!showOnlyFavorites}
+          >
+            <FontAwesomeIcon icon={ICONS.filterAll} className="text-[0.7rem]" aria-hidden="true" />
+            Tutti
+          </button>
+          <button
+            type="button"
+            onClick={() => onFavoritesChange(true)}
+            className={chipClasses(showOnlyFavorites)}
+            aria-pressed={showOnlyFavorites}
+          >
+            <FontAwesomeIcon icon={ICONS.heart} className="text-[0.7rem]" aria-hidden="true" />
+            Solo preferiti
+          </button>
+        </div>
+      </div>
+
       {/* Filtro per genere (selezione singola) */}
       <div className="flex flex-col gap-2">
         <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#F97316]">
