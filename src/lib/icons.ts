@@ -37,6 +37,7 @@ import {
   faFeatherPointed,
   faAngleUp,
   faAnglesUp,
+  faChessboard,
 } from '@fortawesome/free-solid-svg-icons';
 
 /** Icona del "sigillo" mostrato sopra la copertina e della pillola
@@ -52,7 +53,7 @@ export const GENRE_ICONS: Record<string, IconDefinition> = {
   Sport: faFutbol,
   Videogiochi: faGamepad,
   Letteratura: faBookOpen,
-  Cruciverba: faChessBoard,
+  Cruciverba: faChessboard,
 };
 
 export const DEFAULT_GENRE_ICON = faCircleQuestion;
