@@ -48,4 +48,6 @@ export interface Quiz {
   gameUrl: string;
   /** Link all'editor del quiz, es. Kahoot/Quizizz creator (opzionale) */
   editorUrl?: string;
+  /** Indica se il quiz è in arrivo (coming soon) */
+  comingSoon?: boolean;
 }
