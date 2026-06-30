@@ -9,6 +9,18 @@ import type { Quiz } from '../types';
  */
 export const quizzes: Quiz[] = [
   {
+  id: "gira-la-ruota",
+  slug: "gira-la-ruota",
+  title: "Gira la Ruota",
+  subtitle: "Perché ogni lettera conta",
+  coverImageUrl: "/images/gira-la-ruota.jpg",
+  genre: "Quiz",
+  tags: ["cultura generale. parole", "fortuna"],
+  description: "Il classico giuoco a quiz di cultura generale ",
+  favorite: true,
+  gameUrl: "https://giralaruota.vercel.app/",
+  },
+  {
     id: 'capitali-del-mondo-express',
     slug: 'capitali-del-mondo-express',
     title: 'Capitali del Mondo Express',
