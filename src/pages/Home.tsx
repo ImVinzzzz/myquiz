@@ -82,7 +82,7 @@ export default function Home(): ReactElement {
                   onClick={() => setShowFilters(!showFilters)}
                   className="inline-flex items-center gap-2 rounded-full bg-[#19152E] px-5 py-2.5 text-sm font-semibold text-[#F1F5F9] border border-[#312A53] hover:bg-[#251D3A] hover:border-[#A78BFA]/50 transition"
                 >
-                  <FontAwesomeIcon icon={showFilters ? ICONS.angleUp : ICONS.filterAll} aria-hidden="true" />
+                  <FontAwesomeIcon icon={showFilters ? ICONS.anglesUp : ICONS.filterAll} aria-hidden="true" />
                   {showFilters ? "Nascondi filtri" : "Mostra filtri"}
                 </button>
               </div>
