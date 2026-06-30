@@ -17,6 +17,7 @@ export default function Home(): ReactElement {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState<boolean>(false);
 
   // Generi e tag derivati dai dati: nessuna lista da mantenere
   // manualmente quando aggiungi un nuovo quiz.
@@ -33,9 +34,10 @@ export default function Home(): ReactElement {
       const matchesSearch =
         searchQuery.trim() === "" ||
         quiz.title.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesGenre && matchesTags && matchesSearch;
+      const matchesFavorites = !showOnlyFavorites || quiz.favorite === true;
+      return matchesGenre && matchesTags && matchesSearch && matchesFavorites;
     });
-  }, [selectedGenre, selectedTags, searchQuery]);
+  }, [selectedGenre, selectedTags, searchQuery, showOnlyFavorites]);
 
   function toggleTag(tag: string): void {
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag]));
@@ -45,6 +47,7 @@ export default function Home(): ReactElement {
     setSelectedGenre(null);
     setSelectedTags([]);
     setSearchQuery("");
+    setShowOnlyFavorites(false);
   }
 
   return (
@@ -104,8 +107,10 @@ export default function Home(): ReactElement {
                 tags={tags}
                 selectedGenre={selectedGenre}
                 selectedTags={selectedTags}
+                showOnlyFavorites={showOnlyFavorites}
                 onGenreChange={setSelectedGenre}
                 onTagToggle={toggleTag}
+                onFavoritesChange={setShowOnlyFavorites}
                 onReset={resetFilters}
               />
             )}
