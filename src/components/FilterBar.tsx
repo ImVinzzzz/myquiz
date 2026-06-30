@@ -21,10 +21,10 @@ interface FilterBarProps {
 function chipClasses(active: boolean): string {
   return [
     "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-colors",
-    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EA580C]",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F0C1B]",
     active
-      ? "bg-[#F97316] text-[#1E130B]"
-      : "bg-[#2D1B0F] text-[#FFE0B2] ring-1 ring-[#4E2D13] hover:text-[#FFF3E0] hover:ring-[#F97316]/50",
+      ? "bg-[#A78BFA] text-[#0F0C1B]"
+      : "bg-[#251D3A] text-[#A5B4FC] ring-1 ring-[#312A53] hover:text-[#F1F5F9] hover:ring-[#A78BFA]/50",
   ].join(" ");
 }
 
@@ -47,10 +47,10 @@ export default function FilterBar({
   const hasActiveFilters = selectedGenre !== null || selectedTags.length > 0 || showOnlyFavorites;
 
   return (
-    <div className="flex flex-col gap-5 rounded-xl border border-[#4E2D13] bg-[#1E130B] p-5">
+    <div className="flex flex-col gap-5 rounded-xl border border-[#312A53] bg-[#19152E] p-5">
       {/* Filtro per genere (selezione singola) e Preferiti */}
       <div className="flex flex-col gap-2">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#F97316]">
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#A78BFA]">
           Genere
         </span>
         <div className="flex flex-wrap items-center gap-2">
@@ -66,7 +66,7 @@ export default function FilterBar({
           </button>
 
           {/* Divisore */}
-          <div className="h-5 w-px bg-[#4E2D13]" aria-hidden="true" />
+          <div className="h-5 w-px bg-[#312A53]" aria-hidden="true" />
 
           <button type="button" onClick={() => onGenreChange(null)} className={chipClasses(selectedGenre === null)} aria-pressed={selectedGenre === null}>
             <FontAwesomeIcon icon={ICONS.filterAll} className="text-[0.7rem]" aria-hidden="true" />
@@ -82,7 +82,7 @@ export default function FilterBar({
 
       {/* Filtro per tag (selezione multipla) */}
       <div className="flex flex-col gap-2">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#F97316]">
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#A78BFA]">
           Tag
         </span>
         <div className="flex flex-wrap gap-2">
@@ -99,7 +99,7 @@ export default function FilterBar({
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-[#F97316] hover:text-[#FF8C00]"
+          className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-[#A78BFA] hover:text-[#C4B5FD]"
         >
           <FontAwesomeIcon icon={ICONS.reset} className="text-[0.7rem]" aria-hidden="true" />
           Azzera filtri
