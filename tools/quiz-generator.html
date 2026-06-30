@@ -109,10 +109,16 @@
             </div>
           </div>
 
-          <label class="inline-flex items-center gap-2 text-sm">
-            <input id="favorite" type="checkbox" class="h-4 w-4 accent-[#FF2E93]" />
-            Preferito
-          </label>
+          <div class="flex flex-wrap gap-4">
+            <label class="inline-flex items-center gap-2 text-sm cursor-pointer select-none">
+              <input id="favorite" type="checkbox" class="h-4 w-4 accent-[#FF2E93]" />
+              Preferito
+            </label>
+            <label class="inline-flex items-center gap-2 text-sm cursor-pointer select-none">
+              <input id="comingSoon" type="checkbox" class="h-4 w-4 accent-[#A855F7]" />
+              In arrivo (coming soon)
+            </label>
+          </div>
         </section>
 
         <div class="flex flex-wrap gap-3">
@@ -235,6 +241,7 @@
         const notes = document.getElementById('notes').value.trim();
         const editorUrl = document.getElementById('editorUrl').value.trim();
         const favorite = document.getElementById('favorite').checked;
+        const comingSoon = document.getElementById('comingSoon').checked;
 
         const lines = [
           `id: ${tsString(id)},`,
@@ -250,6 +257,7 @@
         lines.push(`favorite: ${favorite},`);
         lines.push(`gameUrl: ${tsString(gameUrl)},`);
         if (editorUrl) lines.push(`editorUrl: ${tsString(editorUrl)},`);
+        if (comingSoon) lines.push(`comingSoon: true,`);
 
         const code = '{\n' + indentBlock(lines.join('\n'), 2) + '\n},';
 
