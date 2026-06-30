@@ -22,6 +22,17 @@ export const quizzes: Quiz[] = [
     editorUrl: "https://triviatrek.vercel.app/editor.html",
   },
   {
+  id: "idioti-crossquiz",
+  slug: "idioti-crossquiz",
+  title: "Idioti crossquiz",
+  coverImageUrl: "/images/idioti-crossquiz.jpg",
+  genre: "Cruciiverba",
+  tags: ["cultura generale", "parole", "quiz", "cruciverba"],
+  description: "Un gioco da tavolo digitale per 2–6 giocatori (o squadre) basato su un cruciverba a tema variabile e cultura generale.",
+  favorite: false,
+  gameUrl: "https://idioti-crossquiz.vercel.app/",
+  },
+  {
     id: "gira-la-ruota",
     slug: "gira-la-ruota",
     title: "Gira la Ruota",
