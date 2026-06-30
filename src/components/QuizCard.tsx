@@ -30,7 +30,9 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
           <img
             src={quiz.coverImageUrl}
             alt={`Copertina di ${quiz.title}`}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 ${
+              quiz.comingSoon ? "grayscale opacity-50 contrast-75" : ""
+            }`}
           />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[#100D22] text-[#94A3B8]">
@@ -40,12 +42,20 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#19152E] via-[#19152E]/10 to-transparent" />
 
-        {quiz.favorite && (
-          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-[#FF2E93]/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
-            <FontAwesomeIcon icon={ICONS.heart} className="text-[0.65rem]" aria-hidden="true" />
-            Preferito
-          </span>
-        )}
+        {/* Badge in alto a sinistra */}
+        <div className="absolute left-3 top-3 flex flex-col gap-1.5">
+          {quiz.favorite && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#FF2E93]/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <FontAwesomeIcon icon={ICONS.heart} className="text-[0.65rem]" aria-hidden="true" />
+              Preferito
+            </span>
+          )}
+          {quiz.comingSoon && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#3B82F6] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              In arrivo
+            </span>
+          )}
+        </div>
 
         {/* Sigillo con l'icona del genere */}
         <div className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#A78BFA]/80 text-[#0F0C1B] shadow-md ring-2 ring-[#A78BFA]/70 backdrop-blur-sm">
@@ -62,7 +72,7 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
           {quiz.subtitle && <p className="mt-1 text-sm italic text-[#A5B4FC]">{quiz.subtitle}</p>}
         </div>
 
-        {/* line-clamp è incluso di default da Tailwind v3.3+; su versioni
+        {/* line-clamp è inclusao di default da Tailwind v3.3+; su versioni
             precedenti serve il plugin @tailwindcss/line-clamp */}
         <p className="line-clamp-3 text-sm leading-relaxed text-[#94A3B8]">{quiz.description}</p>
 
@@ -77,7 +87,7 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
         </div>
 
         <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A78BFA] transition-transform group-hover:translate-x-0.5">
-          Apri la scheda
+          {quiz.comingSoon ? "In arrivo — Info" : "Apri la scheda"}
           <FontAwesomeIcon icon={ICONS.arrowRight} className="text-xs" aria-hidden="true" />
         </span>
       </div>
