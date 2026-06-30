@@ -68,7 +68,7 @@ export const quizzes: Quiz[] = [
     description:
       "Una serie rapida di domande a risposta multipla sulle capitali di tutto il mondo, dalle più note alle più insidiose. Pensato per partite veloci, con un timer stretto che premia chi ha la mappa in testa.",
     notes: 'Versione "facile" disponibile nell\'editor: utile per le serate con bambini o principianti.',
-    favorite: true,
+    favorite: false,
     gameUrl: '#',
     editorUrl: '#',
   },
