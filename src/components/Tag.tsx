@@ -25,8 +25,8 @@ export default function Tag({ label, variant = 'tag', icon }: TagProps): ReactEl
 
   const variantClasses =
     variant === "genre"
-      ? "bg-[#F97316]/15 text-[#FF8C00] ring-1 ring-[#F97316]/40"
-      : "bg-[#22D3EE]/10 text-[#67E8F9] ring-1 ring-[#22D3EE]/30";
+      ? "bg-[#1E130B] text-[#F97316] ring-1 ring-[#F97316]/50"
+      : "bg-[#0F1E24] text-[#22D3EE] ring-1 ring-[#22D3EE]/40";
 
   return (
     <span className={baseClasses + " " + variantClasses}>
