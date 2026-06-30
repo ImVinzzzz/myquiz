@@ -39,6 +39,7 @@ export default function QuizGenerator(): ReactElement {
   const [gameUrl, setGameUrl] = useState("");
   const [editorUrl, setEditorUrl] = useState("");
   const [favorite, setFavorite] = useState(false);
+  const [comingSoon, setComingSoon] = useState(false);
 
   const [slugTouched, setSlugTouched] = useState(false);
   const [coverTouched, setCoverTouched] = useState(false);
@@ -101,6 +102,7 @@ export default function QuizGenerator(): ReactElement {
     lines.push("favorite: " + favorite + ",");
     lines.push("gameUrl: " + tsString(gameUrl) + ",");
     if (editorUrl.trim()) lines.push("editorUrl: " + tsString(editorUrl) + ",");
+    if (comingSoon) lines.push("comingSoon: true,");
 
     const code = "{\n" + indentBlock(lines.join("\n"), 2) + "\n},";
     setGeneratedCode(code);
@@ -131,6 +133,7 @@ export default function QuizGenerator(): ReactElement {
     setGameUrl("");
     setEditorUrl("");
     setFavorite(false);
+    setComingSoon(false);
     setSlugTouched(false);
     setCoverTouched(false);
     setIdTouched(false);
@@ -308,16 +311,29 @@ export default function QuizGenerator(): ReactElement {
               </div>
             </div>
 
-            <label className="inline-flex items-center gap-2 text-sm cursor-pointer select-none text-[#A5B4FC]">
-              <input
-                id="favorite"
-                type="checkbox"
-                checked={favorite}
-                onChange={(e) => setFavorite(e.target.checked)}
-                className="h-4 w-4 rounded bg-[#251D3A] border-[#312A53] text-[#A78BFA] focus:ring-offset-[#19152E] focus:ring-[#A78BFA]"
-              />
-              Preferito
-            </label>
+            <div className="flex flex-wrap gap-4">
+              <label className="inline-flex items-center gap-2 text-sm cursor-pointer select-none text-[#A5B4FC]">
+                <input
+                  id="favorite"
+                  type="checkbox"
+                  checked={favorite}
+                  onChange={(e) => setFavorite(e.target.checked)}
+                  className="h-4 w-4 rounded bg-[#251D3A] border-[#312A53] text-[#A78BFA] focus:ring-offset-[#19152E] focus:ring-[#A78BFA]"
+                />
+                Preferito
+              </label>
+
+              <label className="inline-flex items-center gap-2 text-sm cursor-pointer select-none text-[#A5B4FC]">
+                <input
+                  id="comingSoon"
+                  type="checkbox"
+                  checked={comingSoon}
+                  onChange={(e) => setComingSoon(e.target.checked)}
+                  className="h-4 w-4 rounded bg-[#251D3A] border-[#312A53] text-[#A78BFA] focus:ring-offset-[#19152E] focus:ring-[#A78BFA]"
+                />
+                In arrivo (coming soon)
+              </label>
+            </div>
           </section>
 
           <div className="flex flex-wrap gap-3">

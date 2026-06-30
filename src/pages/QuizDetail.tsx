@@ -101,27 +101,36 @@ export default function QuizDetail(): ReactElement {
 
         {/* Azioni: Gioca ora (sempre presente) + Apri editor (opzionale) */}
         <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href={quiz.gameUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#A78BFA] px-6 py-3 text-sm font-bold text-[#0F0C1B] transition hover:bg-[#C4B5FD]"
-          >
-            <FontAwesomeIcon icon={ICONS.play} aria-hidden="true" />
-            Gioca ora
-          </a>
+          {quiz.comingSoon ? (
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#19152E] border border-[#312A53] px-6 py-3 text-sm font-semibold text-[#94A3B8]">
+              <FontAwesomeIcon icon={ICONS.play} className="opacity-55" aria-hidden="true" />
+              Prossimamente disponibile
+            </span>
+          ) : (
+            <>
+              <a
+                href={quiz.gameUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#A78BFA] px-6 py-3 text-sm font-bold text-[#0F0C1B] transition hover:bg-[#C4B5FD]"
+              >
+                <FontAwesomeIcon icon={ICONS.play} aria-hidden="true" />
+                Gioca ora
+              </a>
 
-          {quiz.editorUrl && (
-            <a
-              href={quiz.editorUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#A78BFA]/40 px-6 py-3 text-sm font-semibold text-[#A78BFA] transition hover:border-[#A78BFA] hover:bg-[#A78BFA]/10"
-            >
-              <FontAwesomeIcon icon={ICONS.editor} aria-hidden="true" />
-              Apri editor
-              <FontAwesomeIcon icon={ICONS.externalLink} className="text-xs" aria-hidden="true" />
-            </a>
+              {quiz.editorUrl && (
+                <a
+                  href={quiz.editorUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#A78BFA]/40 px-6 py-3 text-sm font-semibold text-[#A78BFA] transition hover:border-[#A78BFA] hover:bg-[#A78BFA]/10"
+                >
+                  <FontAwesomeIcon icon={ICONS.editor} aria-hidden="true" />
+                  Apri editor
+                  <FontAwesomeIcon icon={ICONS.externalLink} className="text-xs" aria-hidden="true" />
+                </a>
+              )}
+            </>
           )}
         </div>
       </main>

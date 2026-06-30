@@ -86,7 +86,7 @@ export default function Home(): ReactElement {
                   {showFilters ? "Nascondi filtri" : "Mostra filtri"}
                 </button>
               </div>
-              
+
               <div className="sm:col-span-1 lg:col-span-2 flex justify-end w-full">
                 <div className="relative w-full max-w-md lg:max-w-none">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#94A3B8]">
