@@ -15,7 +15,7 @@ export const quizzes: Quiz[] = [
   subtitle: "Perché ogni lettera conta",
   coverImageUrl: "/images/gira-la-ruota.jpg",
   genre: "Quiz",
-  tags: ["cultura generale. parole", "fortuna"],
+  tags: ["cultura generale", "parole", "fortuna"],
   description: "Il classico giuoco a quiz di cultura generale ",
   favorite: true,
   gameUrl: "https://giralaruota.vercel.app/",
