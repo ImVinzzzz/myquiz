@@ -72,7 +72,7 @@ export const quizzes: Quiz[] = [
   {
     id: 'capitali-del-mondo-express',
     slug: 'capitali-del-mondo-express',
-    title: 'Capitali del Mondo Express',
+    title: 'Capitali del Mondo - Express',
     subtitle: 'Quante capitali riconosci in meno di 60 secondi?',
     coverImageUrl: '/images/capitali-del-mondo-express.jpg',
     genre: 'Geografia',
