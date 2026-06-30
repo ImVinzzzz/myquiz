@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // font-display -> titoli (Space Grotesk: geometrico, "da piattaforma digitale")
-        display: ['Space Grotesk', 'sans-serif'],
+        // font-display -> titoli (Fredoka: giocoso e allegro)
+        display: ['Fredoka', 'sans-serif'],
         // font-sans -> testo (Inter), sovrascrive il sans-serif di default
         sans: ['Inter', 'sans-serif'],
       },
