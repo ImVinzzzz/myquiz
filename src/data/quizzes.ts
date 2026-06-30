@@ -15,7 +15,7 @@ export const quizzes: Quiz[] = [
   subtitle: "Perché ogni lettera conta",
   coverImageUrl: "/images/gira-la-ruota.jpg",
   genre: "Quiz",
-  tags: ["cultura generale", "parole", "fortuna"],
+  tags: ["cultura generale", "parole", "fortuna", "quiz"],
   description: "Gira la Ruota è un gioco a turni in cui da 2 a 6 giocatori si sfidano per indovinare una frase nascosta sul tabellone, accumulando punti e scalando la classifica della manche.\n\nRegole e Meccanica di Gioco\nOgni partita si sviluppa su più manche (mediamente 5), ognuna con un argomento specifico. A ogni turno, il giocatore attivo può scegliere tra tre azioni: Girare la Ruota; Acquistare un Vocale; Dare la Soluzione).\n\nVittoria:\nAl termine di tutte le manche, il giocatore con il punteggio totale più alto viene proclamato vincitore della partita.",
   favorite: true,
   gameUrl: "https://giralaruota.vercel.app/",
