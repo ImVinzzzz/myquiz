@@ -46,7 +46,7 @@ export default function FilterBar({
     <div className="flex flex-col gap-5 rounded-xl border border-[#4E2D13] bg-[#1E130B] p-5">
       {/* Filtro per genere (selezione singola) */}
       <div className="flex flex-col gap-2">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#6B5E96]">
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#F97316]">
           Genere
         </span>
         <div className="flex flex-wrap gap-2">
@@ -64,7 +64,7 @@ export default function FilterBar({
 
       {/* Filtro per tag (selezione multipla) */}
       <div className="flex flex-col gap-2">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#6B5E96]">
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#F97316]">
           Tag
         </span>
         <div className="flex flex-wrap gap-2">
