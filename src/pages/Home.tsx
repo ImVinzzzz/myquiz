@@ -42,18 +42,18 @@ export default function Home(): ReactElement {
   }
 
   return (
-    <div className="min-h-screen bg-[#130F23] text-[#F1EAFE]">
+    <div className="min-h-screen bg-[#EA580C] text-[#FFF3E0]">
       {/* Intestazione */}
-      <header className="border-b border-[#352B54] bg-[#0D0A1A]">
+      <header className="border-b border-[#4E2D13] bg-[#1E130B]">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-10 sm:py-14">
-          <div className="flex items-center gap-3 text-[#A855F7]">
+          <div className="flex items-center gap-3 text-[#F97316]">
             <FontAwesomeIcon icon={ICONS.quiz} className="text-2xl" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em]">
               La mia raccolta di quiz
             </span>
           </div>
           <h1 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">I Miei Quiz</h1>
-          <p className="max-w-2xl text-sm text-[#B4A8D4] sm:text-base">
+          <p className="max-w-2xl text-sm text-[#FFE0B2] sm:text-base">
             Tutti i quiz online che ho creato, pronti da giocare e, dove disponibile, da
             modificare direttamente nell&apos;editor originale.
           </p>
@@ -78,11 +78,11 @@ export default function Home(): ReactElement {
 
         {/* Griglia quiz */}
         {quizzes.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[#352B54] py-16 text-center text-[#6B5E96]">
+          <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[#4E2D13] py-16 text-center text-[#8F705B]">
             <FontAwesomeIcon icon={ICONS.emptyArchive} className="text-3xl" aria-hidden="true" />
             <p>
               L&apos;archivio è vuoto per ora. Aggiungi un nuovo quiz in{' '}
-              <code className="rounded bg-[#1F1838] px-1.5 py-0.5 text-[#A855F7]">
+              <code className="rounded bg-[#2D1B0F] px-1.5 py-0.5 text-[#F97316]">
                 data/quizzes.ts
               </code>
               .
@@ -95,13 +95,13 @@ export default function Home(): ReactElement {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[#352B54] py-16 text-center text-[#6B5E96]">
+          <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[#4E2D13] py-16 text-center text-[#8F705B]">
             <FontAwesomeIcon icon={ICONS.search} className="text-3xl" aria-hidden="true" />
             <p>Nessun quiz corrisponde ai filtri selezionati.</p>
             <button
               type="button"
               onClick={resetFilters}
-              className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A855F7] hover:text-[#C084FC]"
+              className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-[#F97316] hover:text-[#FF8C00]"
             >
               <FontAwesomeIcon icon={ICONS.reset} className="text-xs" aria-hidden="true" />
               Azzera filtri
