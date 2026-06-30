@@ -72,17 +72,4 @@ export const quizzes: Quiz[] = [
     gameUrl: '#',
     editorUrl: '#',
   },
-  {
-    id: 'cinema-italiano-anni-60-70',
-    slug: 'cinema-italiano-anni-60-70',
-    title: "Cinema Italiano, Anni '60-'70",
-    subtitle: 'Dalla commedia all\'italiana al cinema d\'autore',
-    coverImageUrl: '/images/cinema-italiano-anni-60-70.jpg',
-    genre: 'Cinema',
-    tags: ['cinema italiano', 'storia del cinema'],
-    description:
-      "Un quiz a tema sul cinema italiano di due decadi d'oro: registi, attori, titoli iconici e curiosità di produzione. Difficoltà medio-alta, pensato per cinefili più che per il grande pubblico.",
-    favorite: false,
-    gameUrl: '#',
-  },
 ];
