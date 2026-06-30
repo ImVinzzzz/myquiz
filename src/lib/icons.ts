@@ -52,6 +52,7 @@ export const GENRE_ICONS: Record<string, IconDefinition> = {
   Sport: faFutbol,
   Videogiochi: faGamepad,
   Letteratura: faBookOpen,
+  Cruciverba: faChessBoard,
 };
 
 export const DEFAULT_GENRE_ICON = faCircleQuestion;
