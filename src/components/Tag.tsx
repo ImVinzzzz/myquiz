@@ -24,12 +24,12 @@ export default function Tag({ label, variant = 'tag', icon }: TagProps): ReactEl
     'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold tracking-wide';
 
   const variantClasses =
-    variant === 'genre'
-      ? 'bg-[#A855F7]/15 text-[#C084FC] ring-1 ring-[#A855F7]/40'
-      : 'bg-[#22D3EE]/10 text-[#67E8F9] ring-1 ring-[#22D3EE]/30';
+    variant === "genre"
+      ? "bg-[#F97316]/15 text-[#FF8C00] ring-1 ring-[#F97316]/40"
+      : "bg-[#22D3EE]/10 text-[#67E8F9] ring-1 ring-[#22D3EE]/30";
 
   return (
-    <span className={`${baseClasses} ${variantClasses}`}>
+    <span className={baseClasses + " " + variantClasses}>
       <FontAwesomeIcon icon={resolvedIcon} className="text-[0.65rem]" aria-hidden="true" />
       {label}
     </span>

@@ -18,12 +18,12 @@ interface FilterBarProps {
 
 function chipClasses(active: boolean): string {
   return [
-    'inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-colors',
-    'focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#130F23]',
+    "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-colors",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EA580C]",
     active
-      ? 'bg-[#A855F7] text-[#130F23]'
-      : 'bg-[#1F1838] text-[#D8CFEF] ring-1 ring-[#352B54] hover:text-[#F1EAFE] hover:ring-[#A855F7]/50',
-  ].join(' ');
+      ? "bg-[#F97316] text-[#1E130B]"
+      : "bg-[#2D1B0F] text-[#FFE0B2] ring-1 ring-[#4E2D13] hover:text-[#FFF3E0] hover:ring-[#F97316]/50",
+  ].join(" ");
 }
 
 /**
@@ -43,7 +43,7 @@ export default function FilterBar({
   const hasActiveFilters = selectedGenre !== null || selectedTags.length > 0;
 
   return (
-    <div className="flex flex-col gap-5 rounded-xl border border-[#352B54] bg-[#0D0A1A] p-5">
+    <div className="flex flex-col gap-5 rounded-xl border border-[#4E2D13] bg-[#1E130B] p-5">
       {/* Filtro per genere (selezione singola) */}
       <div className="flex flex-col gap-2">
         <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#6B5E96]">
@@ -81,7 +81,7 @@ export default function FilterBar({
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-[#A855F7] hover:text-[#C084FC]"
+          className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-[#F97316] hover:text-[#FF8C00]"
         >
           <FontAwesomeIcon icon={ICONS.reset} className="text-[0.7rem]" aria-hidden="true" />
           Azzera filtri

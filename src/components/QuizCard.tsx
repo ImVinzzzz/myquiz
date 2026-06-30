@@ -21,8 +21,8 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
 
   return (
     <Link
-      to={`/quiz/${quiz.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#1F1838] ring-1 ring-[#352B54] transition-all duration-200 hover:-translate-y-1 hover:ring-[#A855F7]/50 hover:shadow-xl hover:shadow-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7]"
+      to={"/quiz/" + quiz.slug}
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#2D1B0F] ring-1 ring-[#4E2D13] transition-all duration-200 hover:-translate-y-1 hover:ring-[#F97316]/50 hover:shadow-xl hover:shadow-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316]"
     >
       {/* Copertina (o segnaposto se assente) */}
       <div className="relative h-44 w-full overflow-hidden sm:h-48">
@@ -33,12 +33,12 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[#16122A] text-[#4C3F73]">
+          <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[#23150C] text-[#5C3E2A]">
             <FontAwesomeIcon icon={ICONS.quiz} className="text-4xl" aria-hidden="true" />
-            <span className="font-display text-xs text-[#6B5E96]">Copertina non disponibile</span>
+            <span className="font-display text-xs text-[#8F705B]">Copertina non disponibile</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#130F23] via-[#130F23]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#EA580C] via-[#EA580C]/10 to-transparent" />
 
         {quiz.favorite && (
           <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-[#FF2E93]/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
@@ -48,7 +48,7 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
         )}
 
         {/* Sigillo con l'icona del genere */}
-        <div className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#130F23]/80 text-[#C084FC] shadow-md ring-2 ring-[#A855F7]/70 backdrop-blur-sm">
+        <div className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#EA580C]/80 text-[#FFB74D] shadow-md ring-2 ring-[#F97316]/70 backdrop-blur-sm">
           <FontAwesomeIcon icon={sealIcon} className="text-base" aria-hidden="true" />
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function QuizCard({ quiz }: QuizCardProps): ReactElement {
           )}
         </div>
 
-        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A855F7] transition-transform group-hover:translate-x-0.5">
+        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#F97316] transition-transform group-hover:translate-x-0.5">
           Apri la scheda
           <FontAwesomeIcon icon={ICONS.arrowRight} className="text-xs" aria-hidden="true" />
         </span>

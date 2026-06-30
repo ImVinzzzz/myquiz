@@ -7,7 +7,7 @@ import type { ReactElement } from 'react';
  */
 export default function Footer(): ReactElement {
   return (
-    <footer className="border-t border-[#352B54] bg-[#0D0A1A] px-6 py-6 text-center text-xs text-[#6B5E96]">
+    <footer className="border-t border-[#4E2D13] bg-[#1E130B] px-6 py-6 text-center text-xs text-[#8F705B]">
       <p>
         Sito amatoriale senza fini di lucro. Non si intende infrangere alcun copyright.
         Tutti i marchi e le piattaforme citate appartengono ai relativi proprietari.
