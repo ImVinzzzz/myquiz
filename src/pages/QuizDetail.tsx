@@ -18,13 +18,13 @@ export default function QuizDetail(): ReactElement {
 
   if (!quiz) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[#EA580C] px-6 text-center text-[#FFF3E0]">
-        <FontAwesomeIcon icon={ICONS.quiz} className="text-4xl text-[#F97316]" aria-hidden="true" />
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[#0F0C1B] px-6 text-center text-[#F1F5F9]">
+        <FontAwesomeIcon icon={ICONS.quiz} className="text-4xl text-[#A78BFA]" aria-hidden="true" />
         <h1 className="font-display text-2xl font-bold">Quiz non trovato</h1>
-        <p className="text-[#FFE0B2]">Questo quiz non esiste, o non è ancora stato archiviato.</p>
+        <p className="text-[#A5B4FC]">Questo quiz non esiste, o non è ancora stato archiviato.</p>
         <Link
           to="/"
-          className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#F97316] px-5 py-2 text-sm font-semibold text-[#1E130B] transition hover:bg-[#FF8C00]"
+          className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#A78BFA] px-5 py-2 text-sm font-semibold text-[#0F0C1B] transition hover:bg-[#C4B5FD]"
         >
           <FontAwesomeIcon icon={ICONS.arrowLeft} aria-hidden="true" />
           Torna a I Miei Quiz
@@ -34,7 +34,7 @@ export default function QuizDetail(): ReactElement {
   }
 
   return (
-    <div className="min-h-screen bg-[#EA580C] text-[#FFF3E0]">
+    <div className="min-h-screen bg-[#0F0C1B] text-[#F1F5F9]">
       {/* Hero con immagine di copertina */}
       <div className="relative h-64 w-full overflow-hidden sm:h-80 md:h-96">
         {quiz.coverImageUrl ? (
@@ -44,12 +44,12 @@ export default function QuizDetail(): ReactElement {
             className="h-full w-full object-cover"
           />
         ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[#2D1B0F] text-[#5C3E2A]">
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[#19152E] text-[#94A3B8]">
             <FontAwesomeIcon icon={ICONS.quiz} className="text-5xl" aria-hidden="true" />
-            <span className="font-display text-sm text-[#8F705B]">Copertina non disponibile</span>
+            <span className="font-display text-sm text-[#94A3B8]">Copertina non disponibile</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#EA580C] via-[#EA580C]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0C1B] via-[#0F0C1B]/70 to-transparent" />
 
         {quiz.favorite && (
           <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-[#FF2E93]/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-md">
@@ -61,14 +61,14 @@ export default function QuizDetail(): ReactElement {
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-6 pb-8">
           <Link
             to="/"
-            className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#FFE0B2] hover:text-[#FF8C00]"
+            className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#A5B4FC] hover:text-[#C4B5FD]"
           >
             <FontAwesomeIcon icon={ICONS.arrowLeft} aria-hidden="true" />
             Torna a I Miei Quiz
           </Link>
-          <h1 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl">{quiz.title}</h1>
+          <h1 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl text-[#F1F5F9]">{quiz.title}</h1>
           {quiz.subtitle && (
-            <p className="mt-2 text-base italic text-[#FFE0B2] sm:text-lg">{quiz.subtitle}</p>
+            <p className="mt-2 text-base italic text-[#A5B4FC] sm:text-lg">{quiz.subtitle}</p>
           )}
         </div>
       </div>
@@ -84,18 +84,18 @@ export default function QuizDetail(): ReactElement {
 
         {/* Descrizione */}
         <section className="mt-8 max-w-3xl">
-          <h2 className="font-display text-xl font-bold text-[#FFF3E0]">Descrizione</h2>
-          <p className="mt-3 leading-relaxed text-[#FFE0B2]">{quiz.description}</p>
+          <h2 className="font-display text-xl font-bold text-[#F1F5F9]">Descrizione</h2>
+          <p className="mt-3 leading-relaxed text-[#A5B4FC]">{quiz.description}</p>
         </section>
 
         {/* Note: box facoltativo, mostrato solo se c'è qualcosa da segnalare */}
         {quiz.notes && (
-          <section className="mt-8 max-w-3xl rounded-xl border border-dashed border-[#F97316]/40 bg-[#2D1B0F] p-5">
-            <h2 className="flex items-center gap-2 font-display text-lg font-bold text-[#FFF3E0]">
-              <FontAwesomeIcon icon={ICONS.notes} className="text-[#F97316]" aria-hidden="true" />
+          <section className="mt-8 max-w-3xl rounded-xl border border-dashed border-[#A78BFA]/40 bg-[#19152E] p-5">
+            <h2 className="flex items-center gap-2 font-display text-lg font-bold text-[#F1F5F9]">
+              <FontAwesomeIcon icon={ICONS.notes} className="text-[#A78BFA]" aria-hidden="true" />
               Note
             </h2>
-            <p className="mt-3 whitespace-pre-line leading-relaxed text-[#FFE0B2]">{quiz.notes}</p>
+            <p className="mt-3 whitespace-pre-line leading-relaxed text-[#A5B4FC]">{quiz.notes}</p>
           </section>
         )}
 
@@ -105,7 +105,7 @@ export default function QuizDetail(): ReactElement {
             href={quiz.gameUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#F97316] px-6 py-3 text-sm font-bold text-[#1E130B] transition hover:bg-[#FF8C00]"
+            className="inline-flex items-center gap-2 rounded-full bg-[#A78BFA] px-6 py-3 text-sm font-bold text-[#0F0C1B] transition hover:bg-[#C4B5FD]"
           >
             <FontAwesomeIcon icon={ICONS.play} aria-hidden="true" />
             Gioca ora
@@ -116,7 +116,7 @@ export default function QuizDetail(): ReactElement {
               href={quiz.editorUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#F97316]/40 px-6 py-3 text-sm font-semibold text-[#FF8C00] transition hover:border-[#F97316] hover:bg-[#F97316]/10"
+              className="inline-flex items-center gap-2 rounded-full border border-[#A78BFA]/40 px-6 py-3 text-sm font-semibold text-[#A78BFA] transition hover:border-[#A78BFA] hover:bg-[#A78BFA]/10"
             >
               <FontAwesomeIcon icon={ICONS.editor} aria-hidden="true" />
               Apri editor
