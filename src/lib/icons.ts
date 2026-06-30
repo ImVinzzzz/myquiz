@@ -36,6 +36,7 @@ import {
   faBoxArchive,
   faFeatherPointed,
   faAngleUp,
+  faAnglesUp,
 } from '@fortawesome/free-solid-svg-icons';
 
 /** Icona del "sigillo" mostrato sopra la copertina e della pillola
@@ -71,4 +72,5 @@ export const ICONS = {
   emptyArchive: faBoxArchive,
   notes: faFeatherPointed,
   angleUp: faAngleUp,
+  anglesUp: faAnglesUp,
 } as const;
