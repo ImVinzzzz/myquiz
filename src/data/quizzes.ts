@@ -24,11 +24,11 @@ export const quizzes: Quiz[] = [
   {
   id: "idioti-crossquiz",
   slug: "idioti-crossquiz",
-  title: "Idioti crossquiz",
+  title: "Idioti crossQuiz",
   coverImageUrl: "/images/idioti-crossquiz.jpg",
   genre: "Cruciverba",
   tags: ["cultura generale", "parole", "quiz", "schemi personalizzati", "cruciverba"],
-  description: "Un gioco da tavolo digitale per 2–6 giocatori (o squadre) basato su un cruciverba a tema variabile e cultura generale.",
+  description: "Un gioco per 2–6 giocatori (o squadre) basato su un cruciverba a tema variabile e domande di cultura generale.",
   favorite: false,
   gameUrl: "https://idioti-crossquiz.vercel.app/",
   },
