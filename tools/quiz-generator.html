@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generatore quiz — solo per uso interno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--
+      Nota: questo file è uno strumento standalone fuori dal bundle React
+      (vive in tools/, non in src/), quindi qui FontAwesome resta via CDN
+      con la sintassi classica <i class="fa-solid fa-x">. Il sito vero e
+      proprio, dentro src/, usa invece i componenti React di FontAwesome
+      (vedi src/lib/icons.ts) — sono due contesti separati.
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      input,
+      textarea {
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#130F23] text-[#F1EAFE]">
+    <div class="mx-auto max-w-4xl px-6 py-10">
+      <header class="mb-8">
+        <div class="flex items-center gap-3 text-[#A855F7]">
+          <i class="fa-solid fa-wrench" aria-hidden="true"></i>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em]">Tool interno — non fa parte del sito</span>
+        </div>
+        <h1 class="mt-2 font-bold text-2xl sm:text-3xl">Generatore di quiz</h1>
+        <p class="mt-2 text-sm text-[#B4A8D4] max-w-2xl">
+          Compila il form, premi <strong>"Genera codice"</strong> e incolla il risultato in
+          <code class="rounded bg-[#1F1838] px-1.5 py-0.5 text-[#A855F7]">src/data/quizzes.ts</code>,
+          subito dopo un oggetto esistente (prima della <code class="rounded bg-[#1F1838] px-1.5 py-0.5 text-[#A855F7]">]</code> finale dell'array).
+        </p>
+      </header>
+
+      <form id="quiz-form" class="flex flex-col gap-8" onsubmit="return false;">
+        <section class="rounded-xl border border-[#352B54] bg-[#1F1838] p-5 flex flex-col gap-4">
+          <h2 class="font-bold text-lg text-[#F1EAFE]">Dati del quiz</h2>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1" for="title">Titolo *</label>
+            <input id="title" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="Capitali del Mondo Express" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1" for="subtitle">Sottotitolo</label>
+            <input id="subtitle" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="Quante capitali riconosci in meno di 60 secondi?" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold mb-1" for="slug">
+                Slug <span class="text-[#6B5E96] font-normal">(generato dal titolo, modificabile)</span>
+              </label>
+              <input id="slug" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1" for="quizId">
+                ID <span class="text-[#6B5E96] font-normal">(clonato dallo slug, modificabile)</span>
+              </label>
+              <input id="quizId" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1" for="coverImageUrl">
+              URL immagine di copertina <span class="text-[#6B5E96] font-normal">(generato dallo slug, modificabile)</span>
+            </label>
+            <input id="coverImageUrl" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="/images/slug.jpg" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold mb-1" for="genre">Genere</label>
+              <input id="genre" type="text" list="genre-suggestions" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="Geografia" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1" for="tags">Tag</label>
+              <input id="tags" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="capitali, velocità (separati da virgola)" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1" for="description">Descrizione *</label>
+            <textarea id="description" rows="3" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1" for="notes">Note</label>
+            <textarea id="notes" rows="2" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold mb-1" for="gameUrl">Link al gioco online *</label>
+              <input id="gameUrl" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="https://..." />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1" for="editorUrl">Link all'editor</label>
+              <input id="editorUrl" type="text" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] px-3 py-2 focus:outline-none focus:border-[#A855F7]" placeholder="https://... (opzionale)" />
+            </div>
+          </div>
+
+          <label class="inline-flex items-center gap-2 text-sm">
+            <input id="favorite" type="checkbox" class="h-4 w-4 accent-[#FF2E93]" />
+            Preferito
+          </label>
+        </section>
+
+        <div class="flex flex-wrap gap-3">
+          <button type="button" onclick="generateCode()" class="inline-flex items-center gap-2 rounded-full bg-[#A855F7] px-5 py-2.5 text-sm font-semibold text-[#130F23] hover:bg-[#C084FC]">
+            <i class="fa-solid fa-code" aria-hidden="true"></i> Genera codice
+          </button>
+          <button type="button" onclick="resetForm()" class="inline-flex items-center gap-2 rounded-full border border-[#352B54] px-5 py-2.5 text-sm font-semibold text-[#D8CFEF] hover:border-[#A855F7]/50">
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Svuota form
+          </button>
+        </div>
+      </form>
+
+      <!-- Output -->
+      <section id="output-section" class="mt-10 hidden flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <h2 class="font-bold text-lg text-[#F1EAFE]">Codice generato</h2>
+          <button type="button" onclick="copyCode()" class="inline-flex items-center gap-1.5 rounded-full border border-[#A855F7]/40 px-3 py-1.5 text-xs font-semibold text-[#A855F7] hover:bg-[#A855F7]/10">
+            <i class="fa-solid fa-copy" aria-hidden="true"></i> <span id="copy-label">Copia codice</span>
+          </button>
+        </div>
+        <textarea id="output" readonly rows="18" class="w-full rounded-lg bg-[#130F23] border border-[#352B54] p-4 font-mono text-xs text-[#D8CFEF] focus:outline-none"></textarea>
+      </section>
+    </div>
+
+    <datalist id="genre-suggestions">
+      <option value="Cultura generale"></option>
+      <option value="Cinema"></option>
+      <option value="Musica"></option>
+      <option value="Storia"></option>
+      <option value="Geografia"></option>
+      <option value="Scienza"></option>
+      <option value="Sport"></option>
+      <option value="Videogiochi"></option>
+      <option value="Letteratura"></option>
+    </datalist>
+
+    <script>
+      let slugTouched = false;
+      let coverTouched = false;
+
+      /** Rimuove accenti/apostrofi e produce uno slug url-safe. */
+      function slugify(value) {
+        return value
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .replace(/['']/g, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+      }
+
+      /** Stringa letterale TS tra doppi apici, con escape sicuro (gestisce apostrofi e virgolette). */
+      function tsString(value) {
+        return JSON.stringify(value || '');
+      }
+
+      /** Indenta ogni riga di un blocco di testo di N spazi. */
+      function indentBlock(text, spaces) {
+        const pad = ' '.repeat(spaces);
+        return text
+          .split('\n')
+          .map((line) => pad + line)
+          .join('\n');
+      }
+
+      function initAutoFields() {
+        const titleInput = document.getElementById('title');
+        const slugInput = document.getElementById('slug');
+        const idInput = document.getElementById('quizId');
+        const coverInput = document.getElementById('coverImageUrl');
+
+        slugInput.addEventListener('input', () => {
+          slugTouched = true;
+          if (idInput.dataset.touched !== 'true') {
+            idInput.value = slugInput.value;
+          }
+          if (!coverTouched) {
+            coverInput.value = slugInput.value ? `/images/${slugInput.value}.jpg` : '';
+          }
+        });
+        coverInput.addEventListener('input', () => { coverTouched = true; });
+        idInput.addEventListener('input', () => { idInput.dataset.touched = 'true'; });
+
+        titleInput.addEventListener('input', () => {
+          const title = titleInput.value.trim();
+          const autoSlug = slugify(title);
+
+          if (!slugTouched) {
+            slugInput.value = autoSlug;
+          }
+          if (idInput.dataset.touched !== 'true') {
+            idInput.value = slugInput.value;
+          }
+          if (!coverTouched) {
+            coverInput.value = slugInput.value ? `/images/${slugInput.value}.jpg` : '';
+          }
+        });
+      }
+
+      function generateCode() {
+        const title = document.getElementById('title').value.trim();
+        const description = document.getElementById('description').value.trim();
+        const gameUrl = document.getElementById('gameUrl').value.trim();
+
+        if (!title || !description || !gameUrl) {
+          alert('Compila almeno Titolo, Descrizione e Link al gioco online prima di generare il codice.');
+          return;
+        }
+
+        const slug = document.getElementById('slug').value.trim() || slugify(title);
+        const id = document.getElementById('quizId').value.trim() || slug;
+        const subtitle = document.getElementById('subtitle').value.trim();
+        const coverImageUrl = document.getElementById('coverImageUrl').value.trim();
+        const genre = document.getElementById('genre').value.trim();
+        const tags = document
+          .getElementById('tags')
+          .value.split(',')
+          .map((t) => t.trim())
+          .filter(Boolean);
+        const notes = document.getElementById('notes').value.trim();
+        const editorUrl = document.getElementById('editorUrl').value.trim();
+        const favorite = document.getElementById('favorite').checked;
+
+        const lines = [
+          `id: ${tsString(id)},`,
+          `slug: ${tsString(slug)},`,
+          `title: ${tsString(title)},`,
+        ];
+        if (subtitle) lines.push(`subtitle: ${tsString(subtitle)},`);
+        if (coverImageUrl) lines.push(`coverImageUrl: ${tsString(coverImageUrl)},`);
+        lines.push(`genre: ${tsString(genre)},`);
+        lines.push(`tags: [${tags.map(tsString).join(', ')}],`);
+        lines.push(`description: ${tsString(description)},`);
+        if (notes) lines.push(`notes: ${tsString(notes)},`);
+        lines.push(`favorite: ${favorite},`);
+        lines.push(`gameUrl: ${tsString(gameUrl)},`);
+        if (editorUrl) lines.push(`editorUrl: ${tsString(editorUrl)},`);
+
+        const code = '{\n' + indentBlock(lines.join('\n'), 2) + '\n},';
+
+        document.getElementById('output').value = code;
+        document.getElementById('output-section').classList.remove('hidden');
+        document.getElementById('output-section').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function copyCode() {
+        const output = document.getElementById('output');
+        output.select();
+        navigator.clipboard
+          .writeText(output.value)
+          .then(() => {
+            const label = document.getElementById('copy-label');
+            label.textContent = 'Copiato!';
+            setTimeout(() => { label.textContent = 'Copia codice'; }, 1500);
+          })
+          .catch(() => {
+            // Fallback per browser/contesti senza Clipboard API: il testo è già selezionato,
+            // basta premere manualmente Ctrl+C / Cmd+C.
+          });
+      }
+
+      function resetForm() {
+        document.getElementById('quiz-form').reset();
+        document.getElementById('quizId').dataset.touched = 'false';
+        slugTouched = false;
+        coverTouched = false;
+        document.getElementById('output-section').classList.add('hidden');
+      }
+
+      initAutoFields();
+    </script>
+  </body>
+</html>
