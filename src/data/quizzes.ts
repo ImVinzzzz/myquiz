@@ -59,6 +59,7 @@ export const quizzes: Quiz[] = [
   description: "Trivia Trek è un gioco a quiz interattivo a tema Star Trek, appositamente personalizzato per la ciurma degli \"Afrodisiaci\" a bordo della mitica USS Afrodite.\n\nIl gioco si presenta con una splendida interfaccia in stile LCARS (l'iconico sistema operativo dei computer della Flotta Stellare), completa di effetti sonori e una colonna sonora orchestrale in sottofondo. I giocatori si sfidano a turni rispondendo a domande divise in categorie su un tabellone di gioco, accumulando punti (o assegnandone agli avversari in caso di risposte errata), fino a decretare il vincitore finale.",
   favorite: true,
   gameUrl: "https://triviatrek.vercel.app/",
+  editorUrl: "https://triviatrek.vercel.app/editor.html",
   },
   {
     id: 'cinema-italiano-anni-60-70',
