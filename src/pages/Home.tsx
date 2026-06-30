@@ -15,6 +15,8 @@ import { ICONS } from '../lib/icons';
 export default function Home(): ReactElement {
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   // Generi e tag derivati dai dati: nessuna lista da mantenere
   // manualmente quando aggiungi un nuovo quiz.
@@ -28,9 +30,12 @@ export default function Home(): ReactElement {
       // almeno uno dei tag spuntati per comparire nei risultati.
       const matchesTags =
         selectedTags.length === 0 || selectedTags.some((tag) => quiz.tags.includes(tag));
-      return matchesGenre && matchesTags;
+      const matchesSearch =
+        searchQuery.trim() === "" ||
+        quiz.title.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesGenre && matchesTags && matchesSearch;
     });
-  }, [selectedGenre, selectedTags]);
+  }, [selectedGenre, selectedTags, searchQuery]);
 
   function toggleTag(tag: string): void {
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag]));
@@ -39,6 +44,7 @@ export default function Home(): ReactElement {
   function resetFilters(): void {
     setSelectedGenre(null);
     setSelectedTags([]);
+    setSearchQuery("");
   }
 
   return (
@@ -61,18 +67,48 @@ export default function Home(): ReactElement {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-10 sm:py-14">
-        {/* Filtri: mostrati solo se c'è almeno un quiz in archivio */}
+        {/* Filtri e Ricerca: mostrati solo se c'è almeno un quiz in archivio */}
         {quizzes.length > 0 && (
-          <div className="mb-8">
-            <FilterBar
-              genres={genres}
-              tags={tags}
-              selectedGenre={selectedGenre}
-              selectedTags={selectedTags}
-              onGenreChange={setSelectedGenre}
-              onTagToggle={toggleTag}
-              onReset={resetFilters}
-            />
+          <div className="mb-8 flex flex-col gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 items-center">
+              <div className="flex justify-start">
+                <button
+                  type="button"
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#1E130B] px-5 py-2.5 text-sm font-semibold text-[#FFF3E0] border border-[#4E2D13] hover:bg-[#2D1B0F] transition"
+                >
+                  <FontAwesomeIcon icon={showFilters ? ICONS.reset : ICONS.filterAll} aria-hidden="true" />
+                  {showFilters ? "Nascondi filtri" : "Mostra filtri"}
+                </button>
+              </div>
+              
+              <div className="sm:col-span-1 lg:col-span-2 flex justify-end w-full">
+                <div className="relative w-full max-w-md lg:max-w-none">
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#8F705B]">
+                    <FontAwesomeIcon icon={ICONS.search} aria-hidden="true" />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder="Trova per Titolo..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full rounded-full border border-[#4E2D13] bg-[#1E130B] py-2.5 pl-10 pr-4 text-sm text-[#FFF3E0] placeholder-[#8F705B] focus:border-[#F97316] focus:outline-none focus:ring-1 focus:ring-[#F97316] transition-colors"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {showFilters && (
+              <FilterBar
+                genres={genres}
+                tags={tags}
+                selectedGenre={selectedGenre}
+                selectedTags={selectedTags}
+                onGenreChange={setSelectedGenre}
+                onTagToggle={toggleTag}
+                onReset={resetFilters}
+              />
+            )}
           </div>
         )}
 
