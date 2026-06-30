@@ -21,7 +21,7 @@ export default function Footer(): ReactElement {
           className="inline-flex items-center gap-1.5 font-semibold text-[#A78BFA] hover:text-[#C4B5FD] transition-colors"
         >
           <FontAwesomeIcon icon={ICONS.editor} aria-hidden="true" />
-          editor schede
+          Editor Schede
         </Link>
       </div>
     </footer>
