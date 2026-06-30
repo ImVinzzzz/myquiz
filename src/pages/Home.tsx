@@ -15,7 +15,7 @@ import { ICONS } from '../lib/icons';
 export default function Home(): ReactElement {
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [showFilters, setShowFilters] = useState<boolean>(true);
+  const [showFilters, setShowFilters] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [showOnlyFavorites, setShowOnlyFavorites] = useState<boolean>(false);
 
