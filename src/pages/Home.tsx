@@ -25,18 +25,20 @@ export default function Home(): ReactElement {
   const tags = useMemo(() => Array.from(new Set(quizzes.flatMap((quiz) => quiz.tags))).sort(), []);
 
   const filteredQuizzes = useMemo(() => {
-    return quizzes.filter((quiz) => {
-      const matchesGenre = selectedGenre === null || quiz.genre === selectedGenre;
-      // I tag selezionati sono in OR tra loro: basta che il quiz abbia
-      // almeno uno dei tag spuntati per comparire nei risultati.
-      const matchesTags =
-        selectedTags.length === 0 || selectedTags.some((tag) => quiz.tags.includes(tag));
-      const matchesSearch =
-        searchQuery.trim() === "" ||
-        quiz.title.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesFavorites = !showOnlyFavorites || quiz.favorite === true;
-      return matchesGenre && matchesTags && matchesSearch && matchesFavorites;
-    });
+    return quizzes
+      .filter((quiz) => {
+        const matchesGenre = selectedGenre === null || quiz.genre === selectedGenre;
+        // I tag selezionati sono in OR tra loro: basta che il quiz abbia
+        // almeno uno dei tag spuntati per comparire nei risultati.
+        const matchesTags =
+          selectedTags.length === 0 || selectedTags.some((tag) => quiz.tags.includes(tag));
+        const matchesSearch =
+          searchQuery.trim() === "" ||
+          quiz.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesFavorites = !showOnlyFavorites || quiz.favorite === true;
+        return matchesGenre && matchesTags && matchesSearch && matchesFavorites;
+      })
+      .sort((a, b) => a.title.localeCompare(b.title));
   }, [selectedGenre, selectedTags, searchQuery, showOnlyFavorites]);
 
   function toggleTag(tag: string): void {
