@@ -68,6 +68,7 @@ export const quizzes: Quiz[] = [
   notes: "Riuscirai a mantenere intatto il tuo bottino e a indovinare la parola finale? Buona fortuna!",
   favorite: false,
   gameUrl: "https://il-quiz.vercel.app/",
+  editorUrl: "https://il-quiz.vercel.app/editor.html",
 },
   {
     id: 'capitali-del-mondo-express',
