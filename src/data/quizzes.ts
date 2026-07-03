@@ -84,6 +84,6 @@ export const quizzes: Quiz[] = [
     favorite: false,
     gameUrl: 'https://capitali-express.vercel.app/',
     editorUrl: '#',
-    comingSoon: true,
+    comingSoon: false,
   },
 ];
