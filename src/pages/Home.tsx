@@ -60,7 +60,7 @@ export default function Home(): ReactElement {
           <div className="flex items-center gap-3 text-[#A78BFA]">
             <FontAwesomeIcon icon={ICONS.quiz} className="text-2xl" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em]">
-              La mia raccolta di quiz
+              La mia raccolta di giochi online
             </span>
           </div>
           <h1 className="font-display text-3xl font-bold sm:text-4xl md:text-5xl text-[#F1F5F9]">I Miei Quiz</h1>
