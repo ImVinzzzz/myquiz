@@ -77,7 +77,7 @@ export const quizzes: Quiz[] = [
     slug: 'capitali-del-mondo-express',
     title: 'Capitali del Mondo - Express',
     subtitle: 'Quante ne riconosci in 60 secondi?',
-    coverImageUrl: '/images/capitali-del-mondo-express.jpg',
+    coverImageUrl: '/images/capitali-express.jpg',
     genre: 'Geografia',
     tags: ['capitali', 'velocità', 'mappamondo', 'geografia'],
     description:
