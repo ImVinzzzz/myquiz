@@ -85,7 +85,6 @@ export const quizzes: Quiz[] = [
     notes: 'Anche in versione "facile", utile per le serate con bambini o principianti.',
     favorite: false,
     gameUrl: 'https://capitali-express.vercel.app/',
-    editorUrl: '#',
-    comingSoon: true,
+    comingSoon: false,
   },
 ];
